@@ -1,4 +1,4 @@
-# searcher
+# Installer
 
 This is the installer
 that installs the application itself to the folder 'C:\\Oxytech\\Finder'
