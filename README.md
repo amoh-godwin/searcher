@@ -1,2 +1,3 @@
-# searcher
-A Search engine for your pc. The aim is to be faster than windows own.
+# Crawler
+This is actually the one that crawls the entire computer and
+indeces it with a "\`" character. Thank you. Hope you Join us soon
