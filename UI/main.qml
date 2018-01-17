@@ -32,7 +32,7 @@ ApplicationWindow {
             verticalOffset: 4
             radius: 8
             samples: 17
-            color: "#55000000"
+            color: "#77000000"
             source: rect
         }
 
@@ -51,7 +51,7 @@ ApplicationWindow {
                 height: 100
                 color: "Transparent"
 
-                Row {
+                RowLayout {
                     anchors.centerIn: parent
                     width: 700
                     height: 32
@@ -102,6 +102,7 @@ ApplicationWindow {
                                 MouseArea {
                                     anchors.fill: parent
                                     hoverEnabled: true
+                                    cursorShape: Qt.IBeamCursor
 
                                     onEntered: {
                                         sFFocus.focus = true
@@ -118,9 +119,16 @@ ApplicationWindow {
                                 focus: false
                                 Keys.onPressed: {
 
+
+                                    /*
+                                      This prevents the textfield from overflowing by stoping its propagation
+                                    */
                                     if(event.key === Qt.Key_Backspace) {
                                         len = search_text.text.length - 1
                                         search_text.text = search_text.text.slice(0, len)
+
+                                    } else if(search_text.contentWidth >= 624){
+                                        // do nothing
                                     } else {
                                         search_text.text += event.text
                                     }
@@ -166,6 +174,11 @@ ApplicationWindow {
                                     anchors.centerIn: parent
                                     id: clickBtn
                                     source: "images/ic_arrow_forward_white.png"
+                                }
+
+                                MouseArea {
+                                    anchors.fill: parent
+                                    cursorShape: Qt.PointingHandCursor
                                 }
 
                             }
