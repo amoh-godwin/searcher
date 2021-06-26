@@ -10,7 +10,7 @@ ApplicationWindow {
     title: "The Love of God"
 
     property var dynamic_model: [{'match_text': "sdf", 'location': 'locations'}, {'match_text': "sdf", 'location': 'locations'}]
-    property QtObject searcher
+    property QtObject finder
 
 
     ColumnLayout {
@@ -211,7 +211,7 @@ ApplicationWindow {
 
 
     Connections {
-        target: searcher
+        target: finder
 
         function updateResultsModel(model) {
             results_view.model.clear()
