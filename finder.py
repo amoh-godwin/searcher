@@ -1,7 +1,3 @@
-"""
-    Thank you God Almighty
-"""
-
 import re
 import time
 
