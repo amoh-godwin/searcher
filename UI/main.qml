@@ -1,6 +1,6 @@
-import QtQuick 2.4
-import QtQuick.Layouts 1.3
-import QtQuick.Controls 1.2
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Controls 2.15
 import QtGraphicalEffects 1.0
 
 ApplicationWindow {
@@ -19,34 +19,37 @@ ApplicationWindow {
 
         Rectangle {
             id: rect
-            anchors.top: parent.top
+            Layout.alignment: Qt.AlignTop
             Layout.fillWidth: true
             height: 64
             color: "yellowgreen"
 
+            layer.enabled: true
+            layer.effect: DropShadow {
+                anchors.fill: rect
+                horizontalOffset: 0
+                verticalOffset: 4
+                radius: 8
+                samples: 17
+                color: "#77000000"
+                source: rect
+            }
+
         }
 
-        DropShadow {
-            anchors.fill: rect
-            horizontalOffset: 0
-            verticalOffset: 4
-            radius: 8
-            samples: 17
-            color: "#77000000"
-            source: rect
-        }
+
 
 
         RowLayout {
             id: search_cont
-            anchors.top: rect.bottom
             Layout.fillWidth: true
-            anchors.horizontalCenter: parent.horizontalCenter
+            Layout.topMargin: 0
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
             height: 100
 
             Rectangle {
-                Layout.maximumWidth: 1136
-                Layout.preferredWidth: 1012
+                Layout.maximumWidth: 1280
+                Layout.preferredWidth: 480
                 Layout.minimumWidth: 280
                 height: 100
                 color: "Transparent"
@@ -91,12 +94,13 @@ ApplicationWindow {
                                 property int thisCharWidth: 0
                                 property int prevCharWidth: 0
 
-                                Text {
+                                TextField {
                                     x: 0
+                                    width: parent.width
                                     anchors.verticalCenter: parent.verticalCenter
                                     id: search_text
-                                    font.pixelSize: 16
-                                    color: "black"
+                                    font.pixelSize: 14
+                                    //color: "green"
                                 }
 
                                 MouseArea {
@@ -132,34 +136,6 @@ ApplicationWindow {
                                     } else {
                                         search_text.text += event.text
                                     }
-
-
-                                    /****************************************
-                                     *                                      *
-                                     * Delete and Text Overflow Capability  *
-                                     *                                      *
-                                     ****************************************/
-
-                                    /*thisCharWidth = search_text.contentWidth - prevWidth
-                                    prevWidth = search_text.contentWidth
-                                    /*if(search_text.contentWidth < 460) {
-                                        /*if(event.key === Qt.Key_Backspace) {
-                                            len = search_text.text.length - 1
-                                            search_text.text = search_text.text.slice(0, len)
-                                        } else {
-                                            search_text.text += event.text
-                                        }*/
-                                    /*}*/
-                                    /*else {
-                                        /*if(event.key === Qt.Key_Backspace) {
-                                            len = search_text.text.length - 1
-                                            search_text.text = search_text.text.slice(0, len)
-                                            search_text.x += thisCharWidth
-                                        } else {
-                                            search_text.text += event.text
-                                            search_text.x -= thisCharWidth
-                                        }*/
-                                    /*}*/
                                 }
                             }
 
@@ -185,17 +161,20 @@ ApplicationWindow {
 
                         }
 
+                        layer.enabled: true
+                        layer.effect: DropShadow {
+                            anchors.fill: search_layout
+                            horizontalOffset: 0
+                            verticalOffset: 0
+                            radius: 8
+                            samples: 17
+                            color: "#3a3a0000"
+                            source: search_layout
+                        }
+
                     }
 
-                    DropShadow {
-                        anchors.fill: search_layout
-                        horizontalOffset: 0
-                        verticalOffset: 0
-                        radius: 8
-                        samples: 17
-                        color: "#3a3a0000"
-                        source: search_layout
-                    }
+
 
                 }
 
