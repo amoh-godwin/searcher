@@ -9,13 +9,25 @@ ApplicationWindow {
     height: 480
     title: "The Love of God"
 
-    GridLayout {
+    property var dynamic_model: [{'match_text': "sdf", 'location': 'locations'}, {'match_text': "sdf", 'location': 'locations'}]
+
+    signal updateResultsModel(var model)
+
+
+
+    onUpdateResultsModel: {
+        results_view.model.clear()
+        results_view.model.append(model)
+    }
+
+
+    ColumnLayout {
 
         id: first
         width: parent.width
         height: parent.height
-        columns: 1
-        columnSpacing: 0
+        //columns: 1
+        //columnSpacing: 0
 
         Rectangle {
             id: rect
@@ -37,14 +49,11 @@ ApplicationWindow {
 
         }
 
-
-
-
         RowLayout {
             id: search_cont
             Layout.fillWidth: true
             Layout.topMargin: 0
-            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignAbsolute
             height: 100
 
             Rectangle {
@@ -183,6 +192,27 @@ ApplicationWindow {
 
         }
 
+
+        Rectangle {
+            Layout.fillWidth: true
+            Layout.preferredHeight: 200
+
+            ListView {
+                id: results_view
+                anchors.fill: parent
+                model: ResultsModel {}
+                delegate: ResultsDelegate {}
+
+                //Component.onCompleted: model.append(dynamic_model)
+            }
+
+        }
+
+        Rectangle {
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+            color: "transparent"
+        }
 
 
     }
