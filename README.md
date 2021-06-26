@@ -1,2 +1,4 @@
-# searcher
-A Search engine for your pc. The aim is to be faster than windows own.
+# Finder
+The is the code that both reads and search for the word(needle) from our database-file(index).
+It contains the needle itself.
+It also has the file reading code.
