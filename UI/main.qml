@@ -7,7 +7,7 @@ ApplicationWindow {
     visible: true
     width: 720
     height: 80
-    title: "The Love of God"
+    title: "Searcher"
     color: "transparent"
 
     property var dynamic_model: [{'match_text': "sdf", 'location': 'locations'}, {'match_text': "sdf", 'location': 'locations'}]
