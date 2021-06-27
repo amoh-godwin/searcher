@@ -50,14 +50,17 @@ class Finder(QObject):
 
             # Filters
             if self.ignore_caps:
-                needle = needle.lower()
-                each = each.lower()
+                f_needle = needle.lower()
+                f_each = each.lower()
+            else:
+                f_needle = needle
+                f_each = each
 
             if self.app_exited:
                 break
-            elif re.findall(needle, each):
+            elif re.findall(f_needle, f_each):
                 results += 1
-                print(each)
+                print(f_each)
 
         print(results)
         print(time.time() - timer) # 1.17
