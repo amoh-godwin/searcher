@@ -31,22 +31,11 @@ class Finder(QObject):
     def _find(self, needle: str):
 
         timer = 0.0
-
-        item = {}
         results = 0
-
-
+        res_data = {}
 
         timer = time.time()
-
-        
-
-        print('timer: ', time.time() - timer) # 6.4
-
-        print('should be')
-        timer = time.time()
-        for each in item:
-            #print(each)
+        for each in self.address:
 
             # Filters
             if self.ignore_caps:
@@ -60,9 +49,11 @@ class Finder(QObject):
                 break
             elif re.findall(f_needle, f_each):
                 results += 1
-                print(f_each)
+                res_data[f_each] = self.address[each]
+
 
         print(results)
+        print(res_data)
         print(time.time() - timer) # 1.17
 
     def load_indeces(self):
