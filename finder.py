@@ -27,6 +27,9 @@ class Finder(QObject):
         item = {}
         results = 0
 
+
+        timer = time.time()
+
         with open('C:\\OxyTech\\Finder\\C_index.txt', 'r', encoding='utf-8') as e_file:
             for string in e_file:
                 if self.app_exited:
@@ -34,6 +37,8 @@ class Finder(QObject):
                 else: 
                     real = re.split('`', string)
                     item[real[0]] = real[1][0:-1]
+
+        print('timer: ', time.time() - timer) # 6.4
 
         print('should be')
         timer = time.time()
@@ -46,3 +51,4 @@ class Finder(QObject):
                 print(each)
 
         print(results)
+        print(time.time() - timer) # 1.17
