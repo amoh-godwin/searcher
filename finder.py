@@ -1,7 +1,7 @@
 import re
 import time
 
-from PyQt5.QtCore import QObject
+from PyQt5.QtCore import QObject, pyqtSignal
 
 
 class Finder(QObject):
@@ -9,6 +9,8 @@ class Finder(QObject):
 
     def __init__(self):
         super().__init__()
+
+    updateResultsModel = pyqtSignal(list, arguments=['model'])
 
     needle = '55'
     timer = 0.0
@@ -27,6 +29,6 @@ class Finder(QObject):
             if re.findall(self.needle, each):
                 self.results += 1
                 print(each)
-                
+
         print(self.results)
         print(time.time() - timer)
