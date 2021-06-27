@@ -55,8 +55,7 @@ class Finder(QObject):
                 results.append(found)
 
         print(results_count)
-        print(results)
-        print(time.time() - timer) # 1.17
+        print(time.time() - timer)
         self.updateResultsModel.emit(results)
 
     def load_indeces(self):
