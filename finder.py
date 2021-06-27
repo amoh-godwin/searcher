@@ -74,5 +74,5 @@ class Finder(QObject):
                     self.address[real[0]] = real[1][0:-1]
         
         timer = time.time() - timer
-        print(f"It took {timer} seconds")
+        print(f"Load index took {timer} seconds")
 
