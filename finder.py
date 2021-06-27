@@ -10,6 +10,7 @@ class Finder(QObject):
 
     def __init__(self):
         super().__init__()
+        self.app_exited = False
 
     updateResultsModel = pyqtSignal(list, arguments=['model'])
 
@@ -33,6 +34,7 @@ class Finder(QObject):
         print('should be')
         timer = time.time()
         for each in item:
+            print(each)
             if re.findall(needle, each):
                 results += 1
                 print(each)
