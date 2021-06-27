@@ -29,7 +29,7 @@ class Finder(QObject):
             for string in e_file:
                 real = re.split('`', string)
                 item[real[0]] = real[1][0:-1]
-
+        print('should be')
         timer = time.time()
         for each in item:
             if re.findall(needle, each):
