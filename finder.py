@@ -29,15 +29,20 @@ class Finder(QObject):
 
         with open('C:\\OxyTech\\Finder\\C_index.txt', 'r', encoding='utf-8') as e_file:
             for string in e_file:
-                real = re.split('`', string)
-                item[real[0]] = real[1][0:-1]
+                if self.app_exited:
+                    break
+                else: 
+                    real = re.split('`', string)
+                    item[real[0]] = real[1][0:-1]
+
         print('should be')
         timer = time.time()
         for each in item:
-            print(each)
-            if re.findall(needle, each):
+            #print(each)
+            if self.app_exited:
+                break
+            elif re.findall(needle, each):
                 results += 1
                 print(each)
 
         print(results)
-        print(time.time() - timer)
