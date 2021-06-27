@@ -36,6 +36,11 @@ ApplicationWindow {
                     //color: "green"
                 }
 
+                Button {
+                    text: "Search"
+                    onClicked: finder.find(search_text.text)
+                }
+
             }
 
         }
