@@ -31,8 +31,8 @@ class Finder(QObject):
     def _find(self, needle: str):
 
         timer = 0.0
-        results = 0
-        res_data = {}
+        results_count = 0
+        results = {}
 
         timer = time.time()
         for each in self.address:
@@ -48,12 +48,12 @@ class Finder(QObject):
             if self.app_exited:
                 break
             elif re.findall(f_needle, f_each):
-                results += 1
-                res_data[f_each] = self.address[each]
+                results_count += 1
+                results[f_each] = self.address[each]
 
 
+        print(results_count)
         print(results)
-        print(res_data)
         print(time.time() - timer) # 1.17
 
     def load_indeces(self):
