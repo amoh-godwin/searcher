@@ -26,14 +26,16 @@ ApplicationWindow {
             height: 64
             color: "yellowgreen"
 
-
-            TextField {
-                x: 0
+            RowLayout {
                 width: parent.width
-                anchors.verticalCenter: parent.verticalCenter
-                id: search_text
-                font.pixelSize: 14
-                //color: "green"
+
+                TextField {
+                    Layout.fillWidth: true
+                    id: search_text
+                    font.pixelSize: 14
+                    //color: "green"
+                }
+
             }
 
         }
