@@ -11,9 +11,14 @@ class Finder(QObject):
     def __init__(self):
         super().__init__()
         self.app_exited = False
+        self.address = {}
 
         # filters
         self.ignore_caps = True
+
+        # Load indeces
+        self.load_indeces()
+
 
     updateResultsModel = pyqtSignal(list, arguments=['model'])
 
@@ -34,13 +39,7 @@ class Finder(QObject):
 
         timer = time.time()
 
-        with open('C:\\OxyTech\\Finder\\C_index.txt', 'r', encoding='utf-8') as e_file:
-            for string in e_file:
-                if self.app_exited:
-                    break
-                else: 
-                    real = re.split('`', string)
-                    item[real[0]] = real[1][0:-1]
+        
 
         print('timer: ', time.time() - timer) # 6.4
 
@@ -62,3 +61,23 @@ class Finder(QObject):
 
         print(results)
         print(time.time() - timer) # 1.17
+
+    def load_indeces(self):
+        l_thread = threading.Thread(target=self._load_indeces)
+        l_thread.daemon = True
+        l_thread.start()
+
+    def _load_indeces(self):
+
+        timer = 0.0
+        with open('C:\\OxyTech\\Finder\\C_index.txt', 'r', encoding='utf-8') as e_file:
+            for string in e_file:
+                if self.app_exited:
+                    break
+                else: 
+                    real = re.split('`', string)
+                    self.address[real[0]] = real[1][0:-1]
+        
+        timer = time.time() - timer
+        print(f"It took {timer} seconds")
+
