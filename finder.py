@@ -2,7 +2,7 @@ import re
 import time
 import threading
 
-from PyQt5.QtCore import QObject, pyqtSignal
+from PyQt5.QtCore import QObject, pyqtSignal, pyqtSlot
 
 
 class Finder(QObject):
@@ -13,6 +13,7 @@ class Finder(QObject):
 
     updateResultsModel = pyqtSignal(list, arguments=['model'])
 
+    @pyqtSlot(str)
     def find(self, needle: str):
         f_thread = threading.Thread(target=self._find, args=[needle])
         f_thread.daemon = True
