@@ -64,12 +64,6 @@ ApplicationWindow {
 
         }
 
-        Rectangle {
-            Layout.fillHeight: true
-            Layout.fillWidth: true
-            color: "transparent"
-        }
-
 
     }
 
