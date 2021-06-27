@@ -9,7 +9,7 @@ Component {
 
         Text {
             text: match_text
-            anchors.verticalCenter: parent.verticalCenter
+            Layout.alignment: Qt.AlignVCenter
         }
 
         Text {
