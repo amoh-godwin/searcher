@@ -60,8 +60,6 @@ ApplicationWindow {
                 anchors.fill: parent
                 model: ResultsModel {}
                 delegate: ResultsDelegate {}
-
-                //Component.onCompleted: model.append(dynamic_model)
             }
 
         }
