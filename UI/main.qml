@@ -18,8 +18,6 @@ ApplicationWindow {
         id: first
         width: parent.width
         height: parent.height
-        //columns: 1
-        //columnSpacing: 0
 
         Rectangle {
             id: rect
@@ -28,16 +26,6 @@ ApplicationWindow {
             height: 64
             color: "yellowgreen"
 
-            layer.enabled: true
-            layer.effect: DropShadow {
-                anchors.fill: rect
-                horizontalOffset: 0
-                verticalOffset: 4
-                radius: 8
-                samples: 17
-                color: "#77000000"
-                source: rect
-            }
 
             TextField {
                 x: 0
