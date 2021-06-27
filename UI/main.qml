@@ -25,7 +25,7 @@ ApplicationWindow {
             Layout.alignment: Qt.AlignTop
             Layout.fillWidth: true
             height: 64
-            color: "yellowgreen"
+            color: "#55237700"
 
             RowLayout {
                 width: parent.width
