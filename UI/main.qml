@@ -6,7 +6,7 @@ import QtGraphicalEffects 1.0
 ApplicationWindow {
     visible: true
     width: 720
-    height: 480
+    height: 80
     title: "The Love of God"
     color: "transparent"
 
@@ -54,6 +54,7 @@ ApplicationWindow {
         Rectangle {
             Layout.fillWidth: true
             Layout.preferredHeight: 200
+            visible: false
 
             ListView {
                 id: results_view
