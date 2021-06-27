@@ -63,7 +63,8 @@ class Finder(QObject):
 
     def _load_indeces(self):
 
-        timer = 0.0
+        timer = time.time()
+
         with open('C:\\OxyTech\\Finder\\C_index.txt', 'r', encoding='utf-8') as e_file:
             for string in e_file:
                 if self.app_exited:
