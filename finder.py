@@ -32,7 +32,7 @@ class Finder(QObject):
 
         timer = 0.0
         results_count = 0
-        results = {}
+        results = []
 
         timer = time.time()
         for each in self.address:
@@ -49,8 +49,10 @@ class Finder(QObject):
                 break
             elif re.findall(f_needle, f_each):
                 results_count += 1
-                results[f_each] = self.address[each]
-
+                found = {}
+                found['match_text'] = f_each
+                found['location'] = self.address[each]
+                results.append(found)
 
         print(results_count)
         print(results)
