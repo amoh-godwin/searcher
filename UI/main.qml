@@ -28,6 +28,10 @@ ApplicationWindow {
 
             RowLayout {
                 width: parent.width
+                anchors {
+                    top: parent.top
+                    topMargin: 8
+                }
 
                 TextField {
                     Layout.fillWidth: true
