@@ -8,7 +8,7 @@ class Finder(QObject):
 
 
     def __init__(self):
-        pass
+        super().__init__()
 
     needle = '55'
     timer = 0.0
