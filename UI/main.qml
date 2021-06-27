@@ -156,6 +156,9 @@ ApplicationWindow {
                                 MouseArea {
                                     anchors.fill: parent
                                     cursorShape: Qt.PointingHandCursor
+
+                                    onClicked: finder.find(search_text.text)
+
                                 }
 
                             }
