@@ -57,6 +57,7 @@ class Finder(QObject):
         print(results_count)
         print(results)
         print(time.time() - timer) # 1.17
+        self.updateResultsModel.emit(results)
 
     def load_indeces(self):
         l_thread = threading.Thread(target=self._load_indeces)
