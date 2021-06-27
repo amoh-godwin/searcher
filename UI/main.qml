@@ -8,6 +8,7 @@ ApplicationWindow {
     width: 720
     height: 480
     title: "The Love of God"
+    color: "transparent"
 
     property var dynamic_model: [{'match_text': "sdf", 'location': 'locations'}, {'match_text': "sdf", 'location': 'locations'}]
     property QtObject finder
