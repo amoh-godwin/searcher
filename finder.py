@@ -1,5 +1,6 @@
 import re
 import time
+import threading
 
 from PyQt5.QtCore import QObject, pyqtSignal
 
@@ -11,6 +12,14 @@ class Finder(QObject):
         super().__init__()
 
     updateResultsModel = pyqtSignal(list, arguments=['model'])
+
+    def find(self, needle: str):
+        f_thread = threading.Thread(target=self._find, args=[needle])
+        f_thread.daemon = True
+        f_thread.start()
+
+    def _find(self, needle: str):
+        pass
 
     needle = '55'
     timer = 0.0
