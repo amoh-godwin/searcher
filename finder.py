@@ -12,6 +12,9 @@ class Finder(QObject):
         super().__init__()
         self.app_exited = False
 
+        # filters
+        self.ignore_caps = True
+
     updateResultsModel = pyqtSignal(list, arguments=['model'])
 
     @pyqtSlot(str)
@@ -26,6 +29,7 @@ class Finder(QObject):
 
         item = {}
         results = 0
+
 
 
         timer = time.time()
@@ -44,6 +48,12 @@ class Finder(QObject):
         timer = time.time()
         for each in item:
             #print(each)
+
+            # Filters
+            if self.ignore_caps:
+                needle = needle.lower()
+                each = each.lower()
+
             if self.app_exited:
                 break
             elif re.findall(needle, each):
