@@ -12,6 +12,9 @@ ApplicationWindow {
     id: mainWindow
     flags: Qt.Window | Qt.FramelessWindowHint
 
+    property int setX
+    property int setY
+
     property var dynamic_model: [{'match_text': "sdf", 'location': 'locations'}, {'match_text': "sdf", 'location': 'locations'}]
     property QtObject finder
 
@@ -19,6 +22,26 @@ ApplicationWindow {
         width: parent.width
         height: 24
         color: "#55237700"
+
+        MouseArea {
+            anchors.fill: parent
+
+            onPressed: {
+                setX = mouseX
+                setY = mouseY
+            }
+
+            onMouseXChanged: {
+                var dx = mouseX - setX
+                mainWindow.x = mainWindow.x + dx
+            }
+
+            onMouseYChanged:  {
+                var dy = mouseY - setY
+                mainWindow.y = mainWindow.y + dy
+            }
+
+        }
 
         RowLayout {
             anchors.fill: parent
