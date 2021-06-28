@@ -5,8 +5,8 @@ TextField {
 
     background: Rectangle {
         implicitWidth: 128
-        implicitHeight: 28
-        color: "transparent"
+        implicitHeight: 34
+        color: "#77ffffff"
     }
 
 }
