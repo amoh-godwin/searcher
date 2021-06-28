@@ -5,7 +5,7 @@ import QtGraphicalEffects 1.0
 
 ApplicationWindow {
     visible: true
-    width: 720
+    width: 1300
     height: 80
     title: "Searcher"
     color: "transparent"
@@ -13,6 +13,11 @@ ApplicationWindow {
     property var dynamic_model: [{'match_text': "sdf", 'location': 'locations'}, {'match_text': "sdf", 'location': 'locations'}]
     property QtObject finder
 
+    header: Rectangle {
+        width: parent.width
+        height: 24
+        color: "dodgerblue"
+    }
 
     ColumnLayout {
 
