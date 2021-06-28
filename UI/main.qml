@@ -100,7 +100,7 @@ ApplicationWindow {
                     topMargin: 8
                 }
 
-                TextField {
+                CustTextField {
                     Layout.fillWidth: true
                     id: search_text
                     font.pixelSize: 14
