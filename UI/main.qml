@@ -29,6 +29,13 @@ ApplicationWindow {
                 font.pixelSize: 16
             }
 
+            Text {
+                Layout.alignment: Qt.AlignRight
+                text: "-"
+                color: "white"
+                font.pixelSize: 16
+            }
+
         }
 
     }
