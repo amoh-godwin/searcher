@@ -9,6 +9,7 @@ ApplicationWindow {
     height: 80
     title: "Searcher"
     color: "transparent"
+    id: mainWindow
 
     property var dynamic_model: [{'match_text': "sdf", 'location': 'locations'}, {'match_text': "sdf", 'location': 'locations'}]
     property QtObject finder
