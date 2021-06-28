@@ -34,6 +34,8 @@ ApplicationWindow {
                 text: "-"
                 font.pixelSize: 16
 
+                onClicked: mainWindow.showMinimized()
+
                 background: Rectangle {
                     implicitWidth: 28
                     implicitHeight: 28
