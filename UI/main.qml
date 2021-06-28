@@ -23,6 +23,11 @@ ApplicationWindow {
             anchors.leftMargin: 8
             anchors.rightMargin: 8
 
+            Text {
+                text: "Searcher"
+                color: "white"
+                font.pixelSize: 16
+            }
 
         }
 
