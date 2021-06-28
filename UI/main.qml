@@ -16,7 +16,7 @@ ApplicationWindow {
     header: Rectangle {
         width: parent.width
         height: 24
-        color: "dodgerblue"
+        color: "#55237700"
 
         RowLayout {
             anchors.fill: parent
