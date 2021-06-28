@@ -21,7 +21,6 @@ ApplicationWindow {
         RowLayout {
             anchors.fill: parent
             anchors.leftMargin: 8
-            anchors.rightMargin: 8
 
             Text {
                 text: "Searcher"
