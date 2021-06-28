@@ -5,7 +5,7 @@ import QtGraphicalEffects 1.0
 
 ApplicationWindow {
     visible: true
-    width: 1300
+    width: screen.width
     height: 80
     title: "Searcher"
     color: "transparent"
