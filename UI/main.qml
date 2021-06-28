@@ -29,11 +29,25 @@ ApplicationWindow {
                 font.pixelSize: 16
             }
 
-            Text {
+            Button {
                 Layout.alignment: Qt.AlignRight
                 text: "-"
-                color: "white"
                 font.pixelSize: 16
+
+                background: Rectangle {
+                    implicitWidth: 28
+                    implicitHeight: 28
+                    color: parent.hovered ? "#55ffffff" : "transparent"
+                }
+
+                contentItem: Text {
+                    text: parent.text
+                    color: "white"
+                    font: parent.font
+                    verticalAlignment: Text.AlignVCenter
+                    horizontalAlignment: Text.AlignHCenter
+                }
+
             }
 
         }
