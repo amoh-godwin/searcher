@@ -17,6 +17,15 @@ ApplicationWindow {
         width: parent.width
         height: 24
         color: "dodgerblue"
+
+        RowLayout {
+            anchors.fill: parent
+            anchors.leftMargin: 8
+            anchors.rightMargin: 8
+
+
+        }
+
     }
 
     ColumnLayout {
