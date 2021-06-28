@@ -5,10 +5,15 @@ import QtGraphicalEffects 1.0
 
 ApplicationWindow {
     visible: true
-    width: 1300
+    width: screen.width
     height: 80
     title: "Searcher"
     color: "transparent"
+    id: mainWindow
+    flags: Qt.Window | Qt.FramelessWindowHint
+
+    property int setX
+    property int setY
 
     property var dynamic_model: [{'match_text': "sdf", 'location': 'locations'}, {'match_text': "sdf", 'location': 'locations'}]
     property QtObject finder
@@ -16,7 +21,63 @@ ApplicationWindow {
     header: Rectangle {
         width: parent.width
         height: 24
-        color: "dodgerblue"
+        color: "#55237700"
+
+        MouseArea {
+            anchors.fill: parent
+
+            onPressed: {
+                setX = mouseX
+                setY = mouseY
+            }
+
+            onMouseXChanged: {
+                var dx = mouseX - setX
+                mainWindow.x = mainWindow.x + dx
+            }
+
+            onMouseYChanged:  {
+                var dy = mouseY - setY
+                mainWindow.y = mainWindow.y + dy
+            }
+
+        }
+
+        RowLayout {
+            anchors.fill: parent
+            anchors.leftMargin: 8
+
+            Text {
+                text: "Searcher"
+                color: "white"
+                font.pixelSize: 16
+            }
+
+            Button {
+                Layout.alignment: Qt.AlignRight
+                text: "-"
+                font.pixelSize: 16
+
+                onClicked: mainWindow.showMinimized()
+
+                background: Rectangle {
+                    implicitWidth: 28
+                    implicitHeight: 28
+                    color: parent.hovered ? "#55ffffff" : "transparent"
+                }
+
+                contentItem: Text {
+                    text: parent.text
+                    color: "white"
+                    font: parent.font
+                    verticalAlignment: Text.AlignVCenter
+                    horizontalAlignment: Text.AlignHCenter
+                }
+
+            }
+
+        }
+
     }
 
     ColumnLayout {
@@ -36,10 +97,12 @@ ApplicationWindow {
                 width: parent.width
                 anchors {
                     top: parent.top
+                    left: parent.left
                     topMargin: 8
+                    leftMargin: 8
                 }
 
-                TextField {
+                CustTextField {
                     Layout.fillWidth: true
                     id: search_text
                     font.pixelSize: 14
