@@ -97,7 +97,9 @@ ApplicationWindow {
                 width: parent.width
                 anchors {
                     top: parent.top
+                    left: parent.left
                     topMargin: 8
+                    leftMargin: 8
                 }
 
                 CustTextField {
