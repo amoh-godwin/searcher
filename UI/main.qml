@@ -10,6 +10,7 @@ ApplicationWindow {
     title: "Searcher"
     color: "transparent"
     id: mainWindow
+    flags: Qt.Window | Qt.FramelessWindowHint
 
     property var dynamic_model: [{'match_text': "sdf", 'location': 'locations'}, {'match_text': "sdf", 'location': 'locations'}]
     property QtObject finder
