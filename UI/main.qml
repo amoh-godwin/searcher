@@ -54,7 +54,7 @@ ApplicationWindow {
         Rectangle {
                 Layout.fillWidth: true
                 Layout.preferredHeight: 24
-                color: "#55237700"
+                color: "transparent"//"#55237700"
 
                 MouseArea {
                     anchors.fill: parent
@@ -118,7 +118,7 @@ ApplicationWindow {
             Layout.alignment: Qt.AlignTop
             Layout.fillWidth: true
             height: 64
-            color: "#55237700"
+            color: "transparent"//"#55237700"
 
             RowLayout {
                 width: parent.width
