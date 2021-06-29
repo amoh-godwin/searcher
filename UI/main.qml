@@ -85,6 +85,7 @@ ApplicationWindow {
         id: first
         width: parent.width
         height: parent.height
+        spacing: 0
 
         Rectangle {
             id: rect
