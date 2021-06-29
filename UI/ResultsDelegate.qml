@@ -5,7 +5,7 @@ import QtQuick.Layouts 1.15
 Component {
 
     Rectangle {
-        width: parent.width
+        width: ListView.view.width
         height: 48
         color: Qt.rgba(255, 255, 255, 0.7)
 
