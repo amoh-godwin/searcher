@@ -10,13 +10,13 @@ Component {
         color: Qt.rgba(255, 255, 255, 0.5)
         Rectangle {
             anchors.fill: parent
-            anchors.margins: 4
-            radius: 6
+            anchors.margins: 5
+            radius: 8
             color: Qt.rgba(255, 255, 255, 0.8)
 
             RowLayout {
                 anchors.fill: parent
-                anchors.margins: 4
+                anchors.margins: 8
 
                 Text {
                     text: match_text
