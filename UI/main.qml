@@ -112,6 +112,13 @@ ApplicationWindow {
                 Button {
                     text: "Search"
                     onClicked: finder.find(search_text.text)
+
+                    background: Rectangle {
+                        implicitWidth: 78
+                        implicitHeight: 32
+                        color: "transparent"
+                        border.color: "white"
+                    }
                 }
 
             }
