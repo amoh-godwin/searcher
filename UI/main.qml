@@ -163,6 +163,7 @@ ApplicationWindow {
 
             ScrollView {
                 anchors.fill: parent
+                clip: true
 
                 ListView {
                     id: results_view
