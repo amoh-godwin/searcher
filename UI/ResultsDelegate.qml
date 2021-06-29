@@ -7,20 +7,27 @@ Component {
     Rectangle {
         width: ListView.view.width
         height: 48
-        color: Qt.rgba(255, 255, 255, 0.7)
-
-        RowLayout {
+        color: Qt.rgba(255, 255, 255, 0.5)
+        Rectangle {
             anchors.fill: parent
+            anchors.margins: 4
+            radius: 6
+            color: Qt.rgba(255, 255, 255, 0.8)
 
-            Text {
-                text: match_text
-                Layout.alignment: Qt.AlignVCenter
+            RowLayout {
+                anchors.fill: parent
+
+                Text {
+                    text: match_text
+                    Layout.alignment: Qt.AlignVCenter
+                }
+
+                Text {
+                    Layout.alignment: Qt.AlignRight
+                    text: location
+                }
+
             }
-
-            Text {
-                text: location
-            }
-
         }
 
     }
