@@ -6,7 +6,7 @@ import QtGraphicalEffects 1.0
 ApplicationWindow {
     visible: true
     width: screen.width
-    height: 80
+    height: results_cont.height + 80
     title: "Searcher"
     color: "transparent"
     id: mainWindow
@@ -138,6 +138,7 @@ ApplicationWindow {
 
 
         Rectangle {
+            id: results_cont
             Layout.fillWidth: true
             Layout.preferredHeight: 200
             visible: false
