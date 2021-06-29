@@ -110,6 +110,7 @@ ApplicationWindow {
                 }
 
                 Button {
+                    Layout.preferredWidth: 78
                     text: "Search"
                     onClicked: finder.find(search_text.text)
 
