@@ -170,7 +170,7 @@ ApplicationWindow {
                     anchors.fill: parent
                     model: ResultsModel {}
                     delegate: ResultsDelegate {}
-                    spacing: 4
+                    //spacing: 4
 
                     //Component.onCompleted: updateView(dynamic_model) //results_view.model.append(dynamic_model)
                 }
