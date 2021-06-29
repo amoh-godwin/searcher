@@ -86,6 +86,7 @@ ApplicationWindow {
                         text: "Searcher"
                         color: "white"
                         font.pixelSize: 16
+                        font.family: "Segoe UI Semilight"
                     }
 
                     Button {
