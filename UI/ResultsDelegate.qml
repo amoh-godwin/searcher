@@ -4,16 +4,22 @@ import QtQuick.Layouts 1.15
 
 Component {
 
-    RowLayout {
-        height: 32
+    Rectangle {
+        height: 48
+        color: "dodgerblue"
 
-        Text {
-            text: match_text
-            Layout.alignment: Qt.AlignVCenter
-        }
+        RowLayout {
+            anchors.fill: parent
 
-        Text {
-            text: location
+            Text {
+                text: match_text
+                Layout.alignment: Qt.AlignVCenter
+            }
+
+            Text {
+                text: location
+            }
+
         }
 
     }
