@@ -98,8 +98,10 @@ ApplicationWindow {
                 anchors {
                     top: parent.top
                     left: parent.left
+                    right: parent.right
                     topMargin: 8
                     leftMargin: 8
+                    rightMargin: 8
                 }
 
                 CustTextField {
