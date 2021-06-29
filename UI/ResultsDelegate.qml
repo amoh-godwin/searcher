@@ -5,8 +5,9 @@ import QtQuick.Layouts 1.15
 Component {
 
     Rectangle {
+        width: parent.width
         height: 48
-        color: "dodgerblue"
+        color: "white"
 
         RowLayout {
             anchors.fill: parent
