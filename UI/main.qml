@@ -37,6 +37,7 @@ ApplicationWindow {
     Rectangle {
         width: parent.width
         height: 88
+        clip: true
 
         Image {
             source: "./images/paper.jpg"
