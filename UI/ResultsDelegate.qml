@@ -16,6 +16,7 @@ Component {
 
             RowLayout {
                 anchors.fill: parent
+                anchors.margins: 4
 
                 Text {
                     text: match_text
