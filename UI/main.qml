@@ -27,7 +27,6 @@ ApplicationWindow {
         for (var i=0; i<model.length; i++) {
             if (results_cont.pref_height < screen.height - 80) {
                 results_cont.pref_height += 52
-                print('yep'+model[i])
             }
 
             results_view.model.append(model[i])
