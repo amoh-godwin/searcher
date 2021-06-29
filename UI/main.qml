@@ -25,7 +25,7 @@ ApplicationWindow {
         results_view.model.clear()
 
         for (var i=0; i<model.length; i++) {
-            if (results_cont.pref_height < screen.height - 80) {
+            if (results_cont.pref_height < screen.height - 148) {
                 results_cont.pref_height += 52
             }
 
@@ -171,7 +171,7 @@ ApplicationWindow {
                     delegate: ResultsDelegate {}
                     spacing: 4
 
-                    Component.onCompleted: updateView(dynamic_model) //results_view.model.append(dynamic_model)
+                    //Component.onCompleted: updateView(dynamic_model) //results_view.model.append(dynamic_model)
                 }
             }
 
