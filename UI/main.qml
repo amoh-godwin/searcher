@@ -141,14 +141,18 @@ ApplicationWindow {
         Rectangle {
             id: results_cont
             Layout.fillWidth: true
-            Layout.preferredHeight: 200
-            visible: false
+            Layout.preferredHeight: results_cont.pref_height
+
+            property int pref_height: 80
+
 
             ListView {
                 id: results_view
                 anchors.fill: parent
                 model: ResultsModel {}
                 delegate: ResultsDelegate {}
+
+                Component.onCompleted: results_view.model.append(dynamic_model)
             }
 
         }
