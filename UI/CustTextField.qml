@@ -7,6 +7,7 @@ TextField {
         implicitWidth: 128
         implicitHeight: 34
         color: "#77ffffff"
+        border.color: parent.activeFocus ? "dodgerblue" : "transparent"
     }
 
 }
