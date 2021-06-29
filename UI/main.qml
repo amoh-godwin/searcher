@@ -33,64 +33,13 @@ ApplicationWindow {
         }
     }
 
-    header: Rectangle {
+
+    Rectangle {
         width: parent.width
-        height: 24
-        color: "#55237700"
+        height: 88
 
-        MouseArea {
-            anchors.fill: parent
-
-            onPressed: {
-                setX = mouseX
-                setY = mouseY
-            }
-
-            onMouseXChanged: {
-                var dx = mouseX - setX
-                mainWindow.x = mainWindow.x + dx
-            }
-
-            onMouseYChanged:  {
-                var dy = mouseY - setY
-                mainWindow.y = mainWindow.y + dy
-            }
-
-        }
-
-        RowLayout {
-            anchors.fill: parent
-            anchors.leftMargin: 8
-
-            Text {
-                text: "Searcher"
-                color: "white"
-                font.pixelSize: 16
-            }
-
-            Button {
-                Layout.alignment: Qt.AlignRight
-                text: "-"
-                font.pixelSize: 16
-
-                onClicked: mainWindow.showMinimized()
-
-                background: Rectangle {
-                    implicitWidth: 28
-                    implicitHeight: 28
-                    color: parent.hovered ? "#55ffffff" : "transparent"
-                }
-
-                contentItem: Text {
-                    text: parent.text
-                    color: "white"
-                    font: parent.font
-                    verticalAlignment: Text.AlignVCenter
-                    horizontalAlignment: Text.AlignHCenter
-                }
-
-            }
-
+        Image {
+            source: "./images/paper.jpg"
         }
 
     }
@@ -101,6 +50,68 @@ ApplicationWindow {
         width: parent.width
         height: parent.height
         spacing: 0
+
+        Rectangle {
+                Layout.fillWidth: true
+                Layout.preferredHeight: 24
+                color: "#55237700"
+
+                MouseArea {
+                    anchors.fill: parent
+
+                    onPressed: {
+                        setX = mouseX
+                        setY = mouseY
+                    }
+
+                    onMouseXChanged: {
+                        var dx = mouseX - setX
+                        mainWindow.x = mainWindow.x + dx
+                    }
+
+                    onMouseYChanged:  {
+                        var dy = mouseY - setY
+                        mainWindow.y = mainWindow.y + dy
+                    }
+
+                }
+
+                RowLayout {
+                    anchors.fill: parent
+                    anchors.leftMargin: 8
+
+                    Text {
+                        text: "Searcher"
+                        color: "white"
+                        font.pixelSize: 16
+                    }
+
+                    Button {
+                        Layout.alignment: Qt.AlignRight
+                        text: "-"
+                        font.pixelSize: 16
+
+                        onClicked: mainWindow.showMinimized()
+
+                        background: Rectangle {
+                            implicitWidth: 28
+                            implicitHeight: 28
+                            color: parent.hovered ? "#55ffffff" : "transparent"
+                        }
+
+                        contentItem: Text {
+                            text: parent.text
+                            color: "white"
+                            font: parent.font
+                            verticalAlignment: Text.AlignVCenter
+                            horizontalAlignment: Text.AlignHCenter
+                        }
+
+                    }
+
+                }
+
+            }
 
         Rectangle {
             id: rect
