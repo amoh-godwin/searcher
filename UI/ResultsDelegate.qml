@@ -7,7 +7,7 @@ Component {
     Rectangle {
         width: parent.width
         height: 48
-        color: "white"
+        color: Qt.rgba(255, 255, 255, 0.7)
 
         RowLayout {
             anchors.fill: parent
