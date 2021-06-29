@@ -142,17 +142,22 @@ ApplicationWindow {
             id: results_cont
             Layout.fillWidth: true
             Layout.preferredHeight: results_cont.pref_height
+            color: "#25ffffff"
 
             property int pref_height: 80
 
-
-            ListView {
-                id: results_view
+            ScrollView {
                 anchors.fill: parent
-                model: ResultsModel {}
-                delegate: ResultsDelegate {}
 
-                Component.onCompleted: results_view.model.append(dynamic_model)
+                ListView {
+                    id: results_view
+                    anchors.fill: parent
+                    model: ResultsModel {}
+                    delegate: ResultsDelegate {}
+                    spacing: 4
+
+                    Component.onCompleted: results_view.model.append(dynamic_model)
+                }
             }
 
         }
