@@ -122,6 +122,14 @@ ApplicationWindow {
                         color: "transparent"
                         border.color: "white"
                     }
+
+                    contentItem: Text {
+                        text: parent.text
+                        font: parent.font
+                        color: "white"
+                        verticalAlignment: Text.AlignVCenter
+                        horizontalAlignment: Text.AlignHCenter
+                    }
                 }
 
             }
