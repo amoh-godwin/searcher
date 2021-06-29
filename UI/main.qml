@@ -17,6 +17,22 @@ ApplicationWindow {
 
     property var dynamic_model: [{'match_text': "sdf", 'location': 'locations'}, {'match_text': "sdf", 'location': 'locations'}]
     property QtObject finder
+    signal updateView(var model)
+
+
+    onUpdateView: {
+
+        results_view.model.clear()
+
+        for (var i=0; i<model.length; i++) {
+            if (results_cont.pref_height < screen.height - 80) {
+                results_cont.pref_height += 52
+                print('yep'+model[i])
+            }
+
+            results_view.model.append(model[i])
+        }
+    }
 
     header: Rectangle {
         width: parent.width
@@ -144,7 +160,7 @@ ApplicationWindow {
             Layout.preferredHeight: results_cont.pref_height
             color: "#25ffffff"
 
-            property int pref_height: 80
+            property int pref_height: 0
 
             ScrollView {
                 anchors.fill: parent
@@ -156,7 +172,7 @@ ApplicationWindow {
                     delegate: ResultsDelegate {}
                     spacing: 4
 
-                    Component.onCompleted: results_view.model.append(dynamic_model)
+                    Component.onCompleted: updateView(dynamic_model) //results_view.model.append(dynamic_model)
                 }
             }
 
@@ -170,8 +186,9 @@ ApplicationWindow {
         target: finder
 
         function onUpdateResultsModel(model) {
-            results_view.model.clear()
-            results_view.model.append(model)
+            //results_view.model.clear()
+            //results_view.model.append(model)
+            updateView(model);
         }
     }
 
